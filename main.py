@@ -1,12 +1,14 @@
-mport random
+import random
 
-characters = "+-/*!&$#?=@abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
 passlen = int(input("şifre uzunluğu?"))
-password = ""
 
-for i in range(passlen):
-    password = password + random.choice(characters)
-    print(format(i+1) + ".tur şifresi " + password)
+def passwordGeneretor(uzunluk) :
+    characters = "+-/*!&$#?=@abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+    password = ""
+
+    for i in range(uzunluk):
+        password = password + random.choice(characters)
+    return password
     
-
+password = passwordGeneretor(passlen)
 print(password)
